@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+
+    <title>vue.js vue router</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          <router-link to="/"><img src="./img/logo.png" alt="logo"></router-link>
+        </h1>
+        <ul id="gnb">
+          <li v-for="list in gnbList">
+            <router-link :to="list.path">{{list.text}}</router-link>
+          </li>
+        </ul>
+      </header>
+      <router-view></router-view>
+
+      <todo-footer></todo-footer>
+    </div>
+
+    <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3/dist/vue-router.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
